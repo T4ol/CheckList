@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>946</width>
+    <height>613</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,55 +17,47 @@
    <string notr="true">background-color: rgb(214, 255, 137);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="taskMeneger">
-    <property name="geometry">
-     <rect>
-      <x>19</x>
-      <y>9</y>
-      <width>761</width>
-      <height>541</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(103, 111, 127);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <widget class="QScrollArea" name="taskScroll">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>-1</y>
-       <width>761</width>
-       <height>541</height>
-      </rect>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>759</width>
-        <height>539</height>
-       </rect>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="taskMeneger">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(103, 111, 127);</string>
       </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QScrollArea" name="taskScroll">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>906</width>
+            <height>530</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
      </widget>
-    </widget>
-   </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>946</width>
      <height>22</height>
     </rect>
    </property>

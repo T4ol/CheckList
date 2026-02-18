@@ -15,23 +15,41 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLineEdit, QPushButton, QSizePolicy,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QPushButton, QSizePolicy,
+    QTextEdit, QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(264, 300)
-        self.buttonAddTask = QPushButton(Form)
-        self.buttonAddTask.setObjectName(u"buttonAddTask")
-        self.buttonAddTask.setGeometry(QRect(10, 260, 81, 31))
-        self.buttonCancelTask = QPushButton(Form)
-        self.buttonCancelTask.setObjectName(u"buttonCancelTask")
-        self.buttonCancelTask.setGeometry(QRect(180, 260, 71, 31))
-        self.lineForNameTask = QLineEdit(Form)
-        self.lineForNameTask.setObjectName(u"lineForNameTask")
-        self.lineForNameTask.setGeometry(QRect(10, 20, 241, 91))
+        Form.resize(430, 360)
+        Form.setMaximumSize(QSize(430, 360))
+        self.gridLayout = QGridLayout(Form)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.buttonAdd = QPushButton(Form)
+        self.buttonAdd.setObjectName(u"buttonAdd")
+        self.buttonAdd.setEnabled(False)
+
+        self.gridLayout.addWidget(self.buttonAdd, 2, 0, 1, 1)
+
+        self.buttonCancel = QPushButton(Form)
+        self.buttonCancel.setObjectName(u"buttonCancel")
+
+        self.gridLayout.addWidget(self.buttonCancel, 2, 1, 1, 1)
+
+        self.textEdit = QTextEdit(Form)
+        self.textEdit.setObjectName(u"textEdit")
+        self.textEdit.setEnabled(True)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
+        self.textEdit.setSizePolicy(sizePolicy)
+        self.textEdit.setMinimumSize(QSize(0, 0))
+        self.textEdit.setMaximumSize(QSize(16777215, 110))
+
+        self.gridLayout.addWidget(self.textEdit, 0, 0, 1, 2)
+
 
         self.retranslateUi(Form)
 
@@ -40,7 +58,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.buttonAddTask.setText(QCoreApplication.translate("Form", u"Add", None))
-        self.buttonCancelTask.setText(QCoreApplication.translate("Form", u"Cancel", None))
+        self.buttonAdd.setText(QCoreApplication.translate("Form", u"Add", None))
+        self.buttonCancel.setText(QCoreApplication.translate("Form", u"Cancel", None))
     # retranslateUi
 

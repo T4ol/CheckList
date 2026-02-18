@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'taskui.ui'
+## Form generated from reading UI file 'TaskUI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.10.2
 ##
@@ -16,15 +16,15 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QMainWindow, QMenu,
-    QMenuBar, QScrollArea, QSizePolicy, QStatusBar,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QMainWindow,
+    QMenu, QMenuBar, QScrollArea, QSizePolicy,
+    QStatusBar, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(946, 613)
         MainWindow.setStyleSheet(u"background-color: rgb(214, 255, 137);")
         self.actionAdd = QAction(MainWindow)
         self.actionAdd.setObjectName(u"actionAdd")
@@ -34,24 +34,32 @@ class Ui_MainWindow(object):
         self.actionDelete.setObjectName(u"actionDelete")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.verticalLayout = QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
         self.taskMeneger = QFrame(self.centralwidget)
         self.taskMeneger.setObjectName(u"taskMeneger")
-        self.taskMeneger.setGeometry(QRect(19, 9, 761, 541))
         self.taskMeneger.setStyleSheet(u"background-color: rgb(103, 111, 127);")
         self.taskMeneger.setFrameShape(QFrame.Shape.StyledPanel)
         self.taskMeneger.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout = QHBoxLayout(self.taskMeneger)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.taskScroll = QScrollArea(self.taskMeneger)
         self.taskScroll.setObjectName(u"taskScroll")
-        self.taskScroll.setGeometry(QRect(0, -1, 761, 541))
         self.taskScroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 759, 539))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 906, 530))
         self.taskScroll.setWidget(self.scrollAreaWidgetContents)
+
+        self.horizontalLayout.addWidget(self.taskScroll)
+
+
+        self.verticalLayout.addWidget(self.taskMeneger)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QRect(0, 0, 946, 22))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)
